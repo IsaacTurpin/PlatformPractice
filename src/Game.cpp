@@ -15,6 +15,9 @@ Game::~Game()
 
 bool Game::init()
 {
+    main_menu = true;
+
+    if(!play_texture.loadFromFile(""))
 
   return true;
 }
