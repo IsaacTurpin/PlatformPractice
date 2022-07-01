@@ -22,10 +22,11 @@ bool Game::init()
         std::cout<<"play button did not load\n";
     }
     play_button.setTexture(play_texture);
-    play_button.setScale(1,1);
+    play_button.setScale(0.1,0.1);
     play_button.setPosition(window.getSize().x/2-play_button.getGlobalBounds().width/2,
                             window.getSize().y/8-play_button.getGlobalBounds().height/2);
 
+    if(!quit_texture.loadFromFile(""))
   return true;
 }
 
