@@ -25,6 +25,12 @@ class Game
   sf::Texture play_texture;
   sf::Sprite quit_button;
   sf::Texture quit_texture;
+  sf::Sprite one;
+  sf::Texture one_texture;
+  sf::Sprite two;
+  sf::Texture two_texture;
+  sf::Sprite three;
+  sf::Texture three_texture;
   bool main_menu;
   bool level_select = false;
   bool level1_1 = false;
