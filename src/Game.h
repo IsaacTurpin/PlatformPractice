@@ -16,6 +16,7 @@ class Game
   void keyPressed(sf::Event event);
   void keyReleased(sf::Event event);
   bool collisionCheck(sf::Vector2i click, sf::Sprite sprite);
+  void menusInit();
 
  private:
   sf::RenderWindow& window;

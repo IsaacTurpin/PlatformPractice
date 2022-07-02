@@ -17,6 +17,13 @@ bool Game::init()
 {
     main_menu = true;
 
+    menusInit();
+
+  return true;
+}
+
+void Game::menusInit()
+{
     if(!play_texture.loadFromFile("Data/Images/Assets/play.png"))
     {
         std::cout<<"play button did not load\n";
@@ -35,7 +42,16 @@ bool Game::init()
     quit_button.setPosition(window.getSize().x/2-quit_button.getGlobalBounds().width/2,
                             window.getSize().y/2-quit_button.getGlobalBounds().height/2);
 
-  return true;
+    if(!one_texture.loadFromFile("Data/Images/Assets/tile_0171.png"))
+    {
+        std::cout<<"1 texture did not load\n";
+    }
+    one.setTexture(one_texture);
+    one.setScale(1,1);
+    one.setPosition(window.getSize().x/2-one.getGlobalBounds().width/2,
+                            window.getSize().y/5-one.getGlobalBounds().height/2);
+
+
 }
 
 void Game::update(float dt)
@@ -52,7 +68,7 @@ void Game::render()
   }
   if(level_select)
   {
-
+      window.draw(one);
   }
 
 }
