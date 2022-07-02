@@ -13,6 +13,7 @@ class Game
   void update(float dt);
   void render();
   void mouseClicked(sf::Event event);
+  void mouseReleased(sf::Event event);
   void keyPressed(sf::Event event);
   void keyReleased(sf::Event event);
   bool collisionCheck(sf::Vector2i click, sf::Sprite sprite);

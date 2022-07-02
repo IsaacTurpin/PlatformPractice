@@ -118,14 +118,16 @@ void Game::mouseClicked(sf::Event event)
       {
           level1_1 = true;
           level_select = false;
-
       }
   }
 
+}
 
-
+void Game::mouseReleased(sf::Event event)
+{
 
 }
+
 
 void Game::keyPressed(sf::Event event)
 {
