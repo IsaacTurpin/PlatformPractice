@@ -47,9 +47,27 @@ void Game::menusInit()
         std::cout<<"1 texture did not load\n";
     }
     one.setTexture(one_texture);
-    one.setScale(1,1);
+    one.setScale(10,10);
     one.setPosition(window.getSize().x/2-one.getGlobalBounds().width/2,
-                            window.getSize().y/5-one.getGlobalBounds().height/2);
+                            window.getSize().y/6-one.getGlobalBounds().height/2);
+
+    if(!two_texture.loadFromFile("Data/Images/Assets/tile_0172.png"))
+    {
+        std::cout<<"2 texture did not load\n";
+    }
+    two.setTexture(two_texture);
+    two.setScale(10,10);
+    two.setPosition(window.getSize().x/2-two.getGlobalBounds().width/2,
+                    window.getSize().y/2.5-two.getGlobalBounds().height/2);
+
+    if(!three_texture.loadFromFile("Data/Images/Assets/tile_0173.png"))
+    {
+        std::cout<<"3 texture did not load\n";
+    }
+    three.setTexture(three_texture);
+    three.setScale(10,10);
+    three.setPosition(window.getSize().x/2-three.getGlobalBounds().width/2,
+                    window.getSize().y/1.5-three.getGlobalBounds().height/2);
 
 
 }
@@ -69,24 +87,42 @@ void Game::render()
   if(level_select)
   {
       window.draw(one);
+      window.draw(two);
+      window.draw(three);
   }
+  if(level1_1)
+  {
 
+  }
 }
 
 void Game::mouseClicked(sf::Event event)
 {
   //get the click position
   sf::Vector2i click = sf::Mouse::getPosition(window);
+  if(main_menu)
+  {
+    if(collisionCheck(click, play_button))
+    {
+        level_select = true;
+        main_menu = false;
+    }
+    if(collisionCheck(click, quit_button))
+    {
+        window.close();
+    }
+  }
+  if(level_select)
+  {
+      if(collisionCheck(click, one))
+      {
+          level1_1 = true;
+          level_select = false;
 
-  if(collisionCheck(click, play_button))
-  {
-      level_select = true;
-      main_menu = false;
+      }
   }
-  if(collisionCheck(click, quit_button))
-  {
-      window.close();
-  }
+
+
 
 
 }
